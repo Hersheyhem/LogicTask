@@ -1,20 +1,17 @@
 <?php
 
-for ($i = 1; $i<=100; $i++) {
-    if ($i % 3 && $i % 5) {
-        echo $i;
-    } else {
-
-if ($i % 3 == 0) {
-        echo "foo";
+$values = [];
+for ($i= 1; $i <= 100; $i++) {
+    if ($i % 15 == 0) {
+        $values[] = "foobar";
+    } elseif ($i % 3 == 0) {
+        $values[] = "foo";
     } elseif ($i % 5 == 0) {
-        echo "bar";
-    } elseif ($i % 3 == 0 && $i % 5 == 0) {
-        echo "foobar\r\n";
-    }   
+        $values[] = "bar";
+    } else {
+        $values[] = $i;
     }
-    //line breaks to enhance output readability
-    echo "\r\n";
 }
+echo implode(", ", $values);
 
 ?>
